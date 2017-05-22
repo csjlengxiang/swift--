@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        println("fsdf")
+//        println("fsdf")
     }
 
 }

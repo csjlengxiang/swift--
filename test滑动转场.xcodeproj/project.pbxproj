@@ -16,6 +16,7 @@
 		6433057B1B2D282700252EF7 /* PopAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6433057A1B2D282700252EF7 /* PopAnimation.swift */; };
 		643305811B2D372B00252EF7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643305801B2D372B00252EF7 /* NavigationController.swift */; };
 		6459173F1B2D601C00279803 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6459173E1B2D601C00279803 /* main.storyboard */; };
+		64D8C4A71ED337680071533C /* AppearAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C4A61ED337680071533C /* AppearAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		6433057A1B2D282700252EF7 /* PopAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimation.swift; sourceTree = "<group>"; };
 		643305801B2D372B00252EF7 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = ../NavigationController.swift; sourceTree = "<group>"; };
 		6459173E1B2D601C00279803 /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
+		64D8C4A61ED337680071533C /* AppearAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				643305801B2D372B00252EF7 /* NavigationController.swift */,
 				6459173E1B2D601C00279803 /* main.storyboard */,
 				641447451B2D64C0003D7693 /* ViewController2.swift */,
+				64D8C4A61ED337680071533C /* AppearAnimation.swift */,
 			);
 			path = "test滑动转场";
 			sourceTree = "<group>";
@@ -170,9 +173,11 @@
 				TargetAttributes = {
 					643305541B2D27EB00252EF7 = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0830;
 					};
 					643305691B2D27EB00252EF7 = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0830;
 						TestTargetID = 643305541B2D27EB00252EF7;
 					};
 				};
@@ -226,6 +231,7 @@
 				643305811B2D372B00252EF7 /* NavigationController.swift in Sources */,
 				6433055D1B2D27EB00252EF7 /* ViewController.swift in Sources */,
 				6433055B1B2D27EB00252EF7 /* AppDelegate.swift in Sources */,
+				64D8C4A71ED337680071533C /* AppearAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +353,7 @@
 				INFOPLIST_FILE = "test滑动转场/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -357,6 +364,7 @@
 				INFOPLIST_FILE = "test滑动转场/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -375,6 +383,7 @@
 				INFOPLIST_FILE = "test滑动转场Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/test滑动转场.app/test滑动转场";
 			};
 			name = Debug;
@@ -390,6 +399,7 @@
 				INFOPLIST_FILE = "test滑动转场Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/test滑动转场.app/test滑动转场";
 			};
 			name = Release;

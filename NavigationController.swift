@@ -19,15 +19,18 @@ class NavigationController: UINavigationController, UINavigationControllerDelega
 }
 // mark UINavigationControllerDelegate
 extension NavigationController{
-    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if operation == UINavigationControllerOperation.Pop {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if operation == UINavigationControllerOperation.pop {
             return PopAnimation()
+        }
+        if operation == UINavigationControllerOperation.push {
+            return AppearAnimation()
         }
         return nil
     }
     
-    func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        if animationController .isKindOfClass(PopAnimation){
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        if animationController .isKind(of: PopAnimation.self){
             return self.pe
         }
         return nil
@@ -36,23 +39,23 @@ extension NavigationController{
 
 // mark hf
 extension NavigationController{
-    func hf(sender: UIPanGestureRecognizer) {
-        var p = sender.translationInView(self.view).x / self.view.bounds.width
+    func hf(_ sender: UIPanGestureRecognizer) {
+        var p = sender.translation(in: self.view).x / self.view.bounds.width
         p = min(1, max(0, p))
-        println(p)
+//        println(p)
         
-        if sender.state == UIGestureRecognizerState.Began{
+        if sender.state == UIGestureRecognizerState.began{
             self.pe = UIPercentDrivenInteractiveTransition()
-            self.popViewControllerAnimated(true)
+            self.popViewController(animated: true)
         }
-        else if sender.state == UIGestureRecognizerState.Changed{
-            self.pe.updateInteractiveTransition(p)
+        else if sender.state == UIGestureRecognizerState.changed{
+            self.pe.update(p)
         }
-        else if sender.state == UIGestureRecognizerState.Ended || sender.state == UIGestureRecognizerState.Cancelled{
+        else if sender.state == UIGestureRecognizerState.ended || sender.state == UIGestureRecognizerState.cancelled{
             if p > 0.5{
-                self.pe.finishInteractiveTransition()
+                self.pe.finish()
             } else {
-                self.pe.cancelInteractiveTransition()
+                self.pe.cancel()
             }
             self.pe = nil
         }
